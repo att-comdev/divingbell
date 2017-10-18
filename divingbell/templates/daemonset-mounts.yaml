@@ -1,0 +1,63 @@
+# Copyright 2017 The Openstack-Helm Authors.
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+{{- if .Values.manifests.daemonset_mounts }}
+{{- $envAll := . }}
+---
+apiVersion: extensions/v1beta1
+kind: DaemonSet
+metadata:
+  name: divingbell-mounts
+spec:
+  template:
+    metadata:
+      labels:
+{{ tuple $envAll "divingbell" "mounts" | include "helm-toolkit.snippets.kubernetes_metadata_labels" | indent 8 }}
+      annotations:
+        values-hash: {{ tuple .Values.conf.mounts . | quote | sha256sum }}
+    spec:
+      hostNetwork: true
+      hostPID: true
+      containers:
+        - name: divingbell-mounts
+          image: {{ .Values.images.divingbell }}
+          imagePullPolicy: {{ .Values.images.pull_policy }}
+          command:
+            - /tmp/mounts.sh
+          volumeMounts:
+          - name: rootfs-mounts
+            mountPath: {{ .Values.conf.chroot_mnt_path }}
+          - name: divingbell-mounts
+            mountPath: /tmp/mounts.sh
+            subPath: mounts
+            readOnly: true
+          securityContext:
+            privileged: true
+      volumes:
+      - name: rootfs-mounts
+        hostPath:
+          path: /
+      - name: divingbell-mounts
+        configMap:
+          name: divingbell-mounts
+          defaultMode: 0555
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: divingbell-mounts
+data:
+  mounts: |+
+{{- tuple .Values.conf "bin/_mounts.sh.tpl" . | include "helm-toolkit.utils.configmap_templater" | indent 6 }}
+{{- end }}
