@@ -1,10 +1,10 @@
-Patchwork
-=========
+divingbell
+==========
 
 What is it?
 -----------
 
-Patchwork is a lightweight solution for:
+divingbell is a lightweight solution for:
 1. Bare metal configuration management for a few very targeted use cases
 2. Bare metal package manager orchestration
 
@@ -14,13 +14,15 @@ What problems does it solve?
 The needs identified for divingbell were:
 1. To plug gaps in day 1 tools (e.g., drydock) for node configuration
 2. To provide a day 2 solution for managing these configurations going forward
-3. To provide a day 2 solution for system level host patching
+3. [Future] To provide a day 2 solution for system level host patching
 
 Design and Implementation
 -------------------------
 
-Patchwork daemonsets run as priviledged containers mount the host filesystem
-and chroot into that filesystem to enforce configuration and package state.
+divingbell daemonsets run as priviledged containers which mount the host
+filesystem and chroot into that filesystem to enforce configuration and package
+state. (The [diving bell](http://bit.ly/2hSXlai) analogue can be thought of as something that descends
+into the deeps to facilitate work done down below the surface.)
 
 We use the daemonset construct as a way of getting a copy of each pod on every
 node, but the work done by this chart's pods behaves like an event-driven job.
