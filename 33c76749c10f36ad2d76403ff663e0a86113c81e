@@ -1,0 +1,142 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "0f247ee8_49833b59",
+        "filename": "divingbell/templates/bin/_mounts.sh.tpl",
+        "patchSetId": 5
+      },
+      "lineNbr": 98,
+      "author": {
+        "id": 1011948
+      },
+      "writtenOn": "2017-11-09T15:27:24Z",
+      "side": 1,
+      "message": "This seem like functions that should be a \"library\"/\"toolkit\". Is that not achievable within this context.",
+      "range": {
+        "startLine": 21,
+        "startChar": 0,
+        "endLine": 98,
+        "endChar": 6
+      },
+      "revId": "33c76749c10f36ad2d76403ff663e0a86113c81e",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fe2ef457_1f2dfea2",
+        "filename": "divingbell/templates/bin/_mounts.sh.tpl",
+        "patchSetId": 5
+      },
+      "lineNbr": 102,
+      "author": {
+        "id": 1011948
+      },
+      "writtenOn": "2017-11-09T15:27:24Z",
+      "side": 1,
+      "message": "Should we make this an over writable value",
+      "range": {
+        "startLine": 102,
+        "startChar": 0,
+        "endLine": 102,
+        "endChar": 40
+      },
+      "revId": "33c76749c10f36ad2d76403ff663e0a86113c81e",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fbb37c75_fa8378d6",
+        "filename": "divingbell/templates/bin/_mounts.sh.tpl",
+        "patchSetId": 5
+      },
+      "lineNbr": 126,
+      "author": {
+        "id": 1011948
+      },
+      "writtenOn": "2017-11-09T15:27:24Z",
+      "side": 1,
+      "message": "What about permissions if the directory already exist. Should we check that they are accurate/what is expected or needed for the mount to work.",
+      "range": {
+        "startLine": 124,
+        "startChar": 1,
+        "endLine": 126,
+        "endChar": 4
+      },
+      "revId": "33c76749c10f36ad2d76403ff663e0a86113c81e",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8b9f5ebe_2f1244ce",
+        "filename": "divingbell/templates/bin/_mounts.sh.tpl",
+        "patchSetId": 5
+      },
+      "lineNbr": 178,
+      "author": {
+        "id": 1011948
+      },
+      "writtenOn": "2017-11-09T15:27:24Z",
+      "side": 1,
+      "message": "No detail as to why the mount fail or persisting it fail? Doesn\u0027t the journal of systemctl give us details.",
+      "range": {
+        "startLine": 167,
+        "startChar": 0,
+        "endLine": 178,
+        "endChar": 2
+      },
+      "revId": "33c76749c10f36ad2d76403ff663e0a86113c81e",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "2cada6e7_87e72a0a",
+        "filename": "divingbell/templates/bin/_sysctl.sh.tpl",
+        "patchSetId": 5
+      },
+      "lineNbr": 168,
+      "author": {
+        "id": 1011948
+      },
+      "writtenOn": "2017-11-09T15:27:24Z",
+      "side": 1,
+      "message": "This doesn\u0027t seem to capture or log if sysctl chokes or bombs with an error.",
+      "range": {
+        "startLine": 150,
+        "startChar": 1,
+        "endLine": 168,
+        "endChar": 4
+      },
+      "revId": "33c76749c10f36ad2d76403ff663e0a86113c81e",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "67c0370f_57c33523",
+        "filename": "divingbell/templates/daemonsets.yaml",
+        "patchSetId": 5
+      },
+      "lineNbr": 251,
+      "author": {
+        "id": 1011948
+      },
+      "writtenOn": "2017-11-09T15:27:24Z",
+      "side": 1,
+      "message": "Should the configmap be its own document?",
+      "range": {
+        "startLine": 242,
+        "startChar": 0,
+        "endLine": 251,
+        "endChar": 11
+      },
+      "revId": "33c76749c10f36ad2d76403ff663e0a86113c81e",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
+    }
+  ]
+}
