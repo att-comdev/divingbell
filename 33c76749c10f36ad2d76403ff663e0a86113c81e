@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "9a967df8_db3ba619",
+        "filename": "Makefile",
+        "patchSetId": 5
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 1011672
+      },
+      "writtenOn": "2017-11-09T16:38:18Z",
+      "side": 1,
+      "message": "I think this might make sense, though it might be slightly tricky to implement.\n\nshellcheck is nice in the sense that it mostly reports actual issues and not a lot of false positives/formatting stuff.",
+      "parentUuid": "c40b2e89_e7ce67c0",
+      "revId": "33c76749c10f36ad2d76403ff663e0a86113c81e",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5f210e6e_a3081ff2",
         "filename": "TODO",
         "patchSetId": 5
@@ -36,6 +54,23 @@
     },
     {
       "key": {
+        "uuid": "ee7ed578_61b4b268",
+        "filename": "divingbell/templates/bin/_ethtool.sh.tpl",
+        "patchSetId": 5
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 1011672
+      },
+      "writtenOn": "2017-11-09T16:38:18Z",
+      "side": 1,
+      "message": "This is not the official AT\u0026T copyright notice.",
+      "revId": "33c76749c10f36ad2d76403ff663e0a86113c81e",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "e4f61d03_0d3b55a2",
         "filename": "divingbell/templates/bin/_ethtool.sh.tpl",
         "patchSetId": 5
@@ -47,6 +82,23 @@
       "writtenOn": "2017-11-09T15:54:52Z",
       "side": 1,
       "message": "Would recommend external templates and using envsubst for this.",
+      "revId": "33c76749c10f36ad2d76403ff663e0a86113c81e",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "6cda4f2e_6fdb763e",
+        "filename": "divingbell/templates/bin/_mounts.sh.tpl",
+        "patchSetId": 5
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 1011672
+      },
+      "writtenOn": "2017-11-09T16:38:18Z",
+      "side": 1,
+      "message": "Copyright.",
       "revId": "33c76749c10f36ad2d76403ff663e0a86113c81e",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
       "unresolved": false
@@ -145,6 +197,40 @@
     },
     {
       "key": {
+        "uuid": "c0b26887_220324de",
+        "filename": "divingbell/templates/bin/_sysctl.sh.tpl",
+        "patchSetId": 5
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 1011672
+      },
+      "writtenOn": "2017-11-09T16:38:18Z",
+      "side": 1,
+      "message": "Copyright.",
+      "revId": "33c76749c10f36ad2d76403ff663e0a86113c81e",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "66dbf58b_c77b9686",
+        "filename": "divingbell/templates/bin/_sysctl.sh.tpl",
+        "patchSetId": 5
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 1011672
+      },
+      "writtenOn": "2017-11-09T16:38:18Z",
+      "side": 1,
+      "message": "I don\u0027t think we should be using color, since these logs are primarily going through aggregation.\n\nI also think we should put all the log messages into the same file descriptor so they don\u0027t appear out of order.",
+      "revId": "33c76749c10f36ad2d76403ff663e0a86113c81e",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "2cada6e7_87e72a0a",
         "filename": "divingbell/templates/bin/_sysctl.sh.tpl",
         "patchSetId": 5
@@ -168,6 +254,40 @@
     },
     {
       "key": {
+        "uuid": "9a429bec_b1663343",
+        "filename": "divingbell/templates/daemonsets.yaml",
+        "patchSetId": 5
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1011672
+      },
+      "writtenOn": "2017-11-09T16:38:18Z",
+      "side": 1,
+      "message": "Copyright.",
+      "revId": "33c76749c10f36ad2d76403ff663e0a86113c81e",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "23fc9e98_53ab5f07",
+        "filename": "divingbell/templates/daemonsets.yaml",
+        "patchSetId": 5
+      },
+      "lineNbr": 191,
+      "author": {
+        "id": 1011672
+      },
+      "writtenOn": "2017-11-09T16:38:18Z",
+      "side": 1,
+      "message": "Is this going to create 3 daemonsets plus 3 configmaps per host?\n\nThat\u0027s going to be a lot of documents for a large ~4k node site.  We might hit issues on a couple of fronts:  configmap size limitation (since I believe tiller stores rendered documents in a big configmap); and e.g. 12k daemonsets might be a lot for the controller-manager and scheduler to handle, though that\u0027s not listed as a concern on the official kube scaling docs.",
+      "revId": "33c76749c10f36ad2d76403ff663e0a86113c81e",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "67c0370f_57c33523",
         "filename": "divingbell/templates/daemonsets.yaml",
         "patchSetId": 5
@@ -179,6 +299,30 @@
       "writtenOn": "2017-11-09T15:27:24Z",
       "side": 1,
       "message": "Should the configmap be its own document?",
+      "range": {
+        "startLine": 242,
+        "startChar": 0,
+        "endLine": 251,
+        "endChar": 11
+      },
+      "revId": "33c76749c10f36ad2d76403ff663e0a86113c81e",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9af3a51a_746f6280",
+        "filename": "divingbell/templates/daemonsets.yaml",
+        "patchSetId": 5
+      },
+      "lineNbr": 251,
+      "author": {
+        "id": 1011672
+      },
+      "writtenOn": "2017-11-09T16:38:18Z",
+      "side": 1,
+      "message": "I think it\u0027s many config maps constructed using the same loop above.",
+      "parentUuid": "67c0370f_57c33523",
       "range": {
         "startLine": 242,
         "startChar": 0,
