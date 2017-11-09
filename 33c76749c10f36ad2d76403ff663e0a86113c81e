@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "34e48368_1754496c",
+        "filename": "Makefile",
+        "patchSetId": 5
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 1012094
+      },
+      "writtenOn": "2017-11-09T18:24:30Z",
+      "side": 1,
+      "message": "Good to know - I\u0027ll take a look at this and see if this is something that could be easily added here, if not as part of unit tests.",
+      "parentUuid": "9a967df8_db3ba619",
+      "revId": "33c76749c10f36ad2d76403ff663e0a86113c81e",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5f210e6e_a3081ff2",
         "filename": "TODO",
         "patchSetId": 5
@@ -48,6 +66,24 @@
       "writtenOn": "2017-11-09T15:54:52Z",
       "side": 1,
       "message": "Are these captured in actual workflow tools like JIRA stories?",
+      "revId": "33c76749c10f36ad2d76403ff663e0a86113c81e",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1408821c_20bff011",
+        "filename": "TODO",
+        "patchSetId": 5
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1012094
+      },
+      "writtenOn": "2017-11-09T18:24:30Z",
+      "side": 1,
+      "message": "They aren\u0027t - I\u0027ll talk to Nancy about having them added to the project\u0027s backlog.",
+      "parentUuid": "5f210e6e_a3081ff2",
       "revId": "33c76749c10f36ad2d76403ff663e0a86113c81e",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
       "unresolved": false
@@ -88,6 +124,24 @@
     },
     {
       "key": {
+        "uuid": "6c2f7e5d_4015ebeb",
+        "filename": "divingbell/templates/bin/_ethtool.sh.tpl",
+        "patchSetId": 5
+      },
+      "lineNbr": 192,
+      "author": {
+        "id": 1012094
+      },
+      "writtenOn": "2017-11-09T18:24:30Z",
+      "side": 1,
+      "message": "Good idea, I\u0027ll check that out and see if we can templatize this in a cleaner way.",
+      "parentUuid": "e4f61d03_0d3b55a2",
+      "revId": "33c76749c10f36ad2d76403ff663e0a86113c81e",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "6cda4f2e_6fdb763e",
         "filename": "divingbell/templates/bin/_mounts.sh.tpl",
         "patchSetId": 5
@@ -116,6 +170,30 @@
       "writtenOn": "2017-11-09T15:27:24Z",
       "side": 1,
       "message": "This seem like functions that should be a \"library\"/\"toolkit\". Is that not achievable within this context.",
+      "range": {
+        "startLine": 21,
+        "startChar": 0,
+        "endLine": 98,
+        "endChar": 6
+      },
+      "revId": "33c76749c10f36ad2d76403ff663e0a86113c81e",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "11eae72b_b3728afd",
+        "filename": "divingbell/templates/bin/_mounts.sh.tpl",
+        "patchSetId": 5
+      },
+      "lineNbr": 98,
+      "author": {
+        "id": 1012094
+      },
+      "writtenOn": "2017-11-09T18:24:30Z",
+      "side": 1,
+      "message": "Yes - one of the items mentioned in the TODO file is to migrate this into helm toolkit.",
+      "parentUuid": "0f247ee8_49833b59",
       "range": {
         "startLine": 21,
         "startChar": 0,
@@ -174,6 +252,30 @@
     },
     {
       "key": {
+        "uuid": "9a218032_2c9923cb",
+        "filename": "divingbell/templates/bin/_mounts.sh.tpl",
+        "patchSetId": 5
+      },
+      "lineNbr": 126,
+      "author": {
+        "id": 1012094
+      },
+      "writtenOn": "2017-11-09T18:24:30Z",
+      "side": 1,
+      "message": "Will add a line to validate writing to the location is possible.",
+      "parentUuid": "fbb37c75_fa8378d6",
+      "range": {
+        "startLine": 124,
+        "startChar": 1,
+        "endLine": 126,
+        "endChar": 4
+      },
+      "revId": "33c76749c10f36ad2d76403ff663e0a86113c81e",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "8b9f5ebe_2f1244ce",
         "filename": "divingbell/templates/bin/_mounts.sh.tpl",
         "patchSetId": 5
@@ -185,6 +287,30 @@
       "writtenOn": "2017-11-09T15:27:24Z",
       "side": 1,
       "message": "No detail as to why the mount fail or persisting it fail? Doesn\u0027t the journal of systemctl give us details.",
+      "range": {
+        "startLine": 167,
+        "startChar": 0,
+        "endLine": 178,
+        "endChar": 2
+      },
+      "revId": "33c76749c10f36ad2d76403ff663e0a86113c81e",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9447c809_868daaed",
+        "filename": "divingbell/templates/bin/_mounts.sh.tpl",
+        "patchSetId": 5
+      },
+      "lineNbr": 178,
+      "author": {
+        "id": 1012094
+      },
+      "writtenOn": "2017-11-09T18:24:30Z",
+      "side": 1,
+      "message": "It does, but I believe this is the same info printed to stdout/stderr when these systemctl commands are run in terminal. If the mount fails, it reports the reason why (you can see this when running the unit tests for mounts).",
+      "parentUuid": "8b9f5ebe_2f1244ce",
       "range": {
         "startLine": 167,
         "startChar": 0,
@@ -231,6 +357,24 @@
     },
     {
       "key": {
+        "uuid": "a5e388e2_d3745e1c",
+        "filename": "divingbell/templates/bin/_sysctl.sh.tpl",
+        "patchSetId": 5
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 1012094
+      },
+      "writtenOn": "2017-11-09T18:24:30Z",
+      "side": 1,
+      "message": "I agree in the importance of message ordering - see L76-80. stdout and stderr are redirected together, so their original ordering is preserved.\nRegarding color, you\u0027re right in that it would only be seen if someone was looking directly into the container\u0027s log, or called \"kubctl logs\" on the pod for example. I\u0027ll see about having it disabled by default but perhaps left as an optional debug tool.",
+      "parentUuid": "66dbf58b_c77b9686",
+      "revId": "33c76749c10f36ad2d76403ff663e0a86113c81e",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "2cada6e7_87e72a0a",
         "filename": "divingbell/templates/bin/_sysctl.sh.tpl",
         "patchSetId": 5
@@ -242,6 +386,30 @@
       "writtenOn": "2017-11-09T15:27:24Z",
       "side": 1,
       "message": "This doesn\u0027t seem to capture or log if sysctl chokes or bombs with an error.",
+      "range": {
+        "startLine": 150,
+        "startChar": 1,
+        "endLine": 168,
+        "endChar": 4
+      },
+      "revId": "33c76749c10f36ad2d76403ff663e0a86113c81e",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dbf00856_1d004f71",
+        "filename": "divingbell/templates/bin/_sysctl.sh.tpl",
+        "patchSetId": 5
+      },
+      "lineNbr": 168,
+      "author": {
+        "id": 1012094
+      },
+      "writtenOn": "2017-11-09T18:24:30Z",
+      "side": 1,
+      "message": "The stdout \u0026 stderr of anything/everything in the script is captured/redirected after line 80, so any output generated by subcommands will end up in the container logs.",
+      "parentUuid": "2cada6e7_87e72a0a",
       "range": {
         "startLine": 150,
         "startChar": 1,
@@ -288,6 +456,24 @@
     },
     {
       "key": {
+        "uuid": "9c2fa008_75dbebc0",
+        "filename": "divingbell/templates/daemonsets.yaml",
+        "patchSetId": 5
+      },
+      "lineNbr": 191,
+      "author": {
+        "id": 1012094
+      },
+      "writtenOn": "2017-11-09T18:24:30Z",
+      "side": 1,
+      "message": "Actually what happens is we generate the smallest number of daemonsets that can satisfy the given set of overrides.\nSo for a given type of daemonset, if we have some overrides defined for a label and some other overrides defined for a host, then 3 daemonsets are generated:\n- One that schedules to the specific host with the host overrides\n- One that schedules to the specific label with the label overrides, but cannot schedule to any other host or label override defined for the same daemonset type.\n- One that schedules to everything else with normal conf values (no overrides), but cannot schedule to any host or label override defined for the same daemonset type.\n\nWe would run into the situation you describe if someone has defined individual overrides for these hundreds/thousands of hosts.",
+      "parentUuid": "23fc9e98_53ab5f07",
+      "revId": "33c76749c10f36ad2d76403ff663e0a86113c81e",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "67c0370f_57c33523",
         "filename": "divingbell/templates/daemonsets.yaml",
         "patchSetId": 5
@@ -322,6 +508,30 @@
       "writtenOn": "2017-11-09T16:38:18Z",
       "side": 1,
       "message": "I think it\u0027s many config maps constructed using the same loop above.",
+      "parentUuid": "67c0370f_57c33523",
+      "range": {
+        "startLine": 242,
+        "startChar": 0,
+        "endLine": 251,
+        "endChar": 11
+      },
+      "revId": "33c76749c10f36ad2d76403ff663e0a86113c81e",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "897135a8_d8124ff1",
+        "filename": "divingbell/templates/daemonsets.yaml",
+        "patchSetId": 5
+      },
+      "lineNbr": 251,
+      "author": {
+        "id": 1012094
+      },
+      "writtenOn": "2017-11-09T18:24:30Z",
+      "side": 1,
+      "message": "The configmaps need to be generated together with the daemonsets in a 1:1 relationship. What happens is that we look at overrides defined for labels and hosts, and merge those overrides with the base conf to generate a configmap that contains the base conf + applied overrides.\nFor example if you have a host override and a label override defined, you will get three daemonset/configmap pairings:\n- One for the host override, with those overrides applied to the configmap\n- One for the label override, with those overrides applied to the configmap\n- One for the \"default\" daemonset, with no overrides applied",
       "parentUuid": "67c0370f_57c33523",
       "range": {
         "startLine": 242,
