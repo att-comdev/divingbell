@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3930297a_91d89104",
+        "filename": "divingbell/templates/bin/_shcommon.tpl",
+        "patchSetId": 8
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1012098
+      },
+      "writtenOn": "2017-11-17T19:06:04Z",
+      "side": 1,
+      "message": "this makes bash a requirement (which is fine)\n\nso it\u0027s clear this won\u0027t work with /bin/sh in some restricted env",
+      "range": {
+        "startLine": 2,
+        "startChar": 0,
+        "endLine": 2,
+        "endChar": 11
+      },
+      "revId": "6d2f967ce456325b3d334f99fb7692e0612a2855",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
+    }
+  ]
+}
