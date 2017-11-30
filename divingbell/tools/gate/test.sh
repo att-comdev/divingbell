@@ -603,8 +603,7 @@ test_overrides(){
               - key: kubernetes.io/hostname
                 operator: NotIn
                 values:
-                - "specialhost"
-      hostNetwork: true' &&
+                - "specialhost"' &&
   echo '[SUCCESS] overrides test 2 passed successfully' >> "${TEST_RESULTS}" ||
   (echo '[FAILURE] overrides test 2 failed' && exit 1)
 
@@ -634,8 +633,7 @@ test_overrides(){
               - key: kubernetes.io/hostname
                 operator: NotIn
                 values:
-                - "specialhost"
-      hostNetwork: true' &&
+                - "specialhost"' &&
   echo '[SUCCESS] overrides test 3 passed successfully' >> "${TEST_RESULTS}" ||
   (echo '[FAILURE] overrides test 3 failed' && exit 1)
 
@@ -670,8 +668,7 @@ test_overrides(){
               - key: kubernetes.io/hostname
                 operator: NotIn
                 values:
-                - "specialhost"
-      hostNetwork: true' &&
+                - "specialhost"' &&
   echo '[SUCCESS] overrides test 4 passed successfully' >> "${TEST_RESULTS}" ||
   (echo '[FAILURE] overrides test 4 failed' && exit 1)
 
@@ -686,8 +683,7 @@ test_overrides(){
                 operator: In
                 values:
                 - "soup"
-                - "chips"
-      hostNetwork: true' &&
+                - "chips"' &&
   echo '[SUCCESS] overrides test 5 passed successfully' >> "${TEST_RESULTS}" ||
   (echo '[FAILURE] overrides test 5 failed' && exit 1)
 
@@ -722,8 +718,7 @@ test_overrides(){
               - key: test_label
                 operator: NotIn
                 values:
-                - "test_value"
-      hostNetwork: true' &&
+                - "test_value"' &&
   echo '[SUCCESS] overrides test 6 passed successfully' >> "${TEST_RESULTS}" ||
   (echo '[FAILURE] overrides test 6 failed' && exit 1)
 
