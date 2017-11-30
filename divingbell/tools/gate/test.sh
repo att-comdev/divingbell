@@ -483,7 +483,7 @@ test_overrides(){
     net.ipv4.ip_forward: 1
     net.ipv6.conf.all.forwarding: 1
   overrides:
-    divingbell-sysctl:
+    divingbell_sysctl:
       labels:
       - label:
           key: compute_type
@@ -521,7 +521,7 @@ test_overrides(){
         conf:
           sysctl:
             net.ipv6.conf.all.forwarding: 1
-    divingbell-mounts:
+    divingbell_mounts:
       labels:
       - label:
           key: blarg
@@ -535,14 +535,14 @@ test_overrides(){
               device: tmpfs
               type: tmpfs
               options: 'defaults,noatime,nosuid,nodev,noexec,mode=1777,size=32M'
-    divingbell-ethtool:
+    divingbell_ethtool:
       hosts:
       - name: ethtool-host
         conf:
           ethtool:
             ens3:
               hw-tc-offload: on
-    divingbell-bogus:
+    divingbell_bogus:
       labels:
       - label:
           key: bogus
@@ -603,8 +603,7 @@ test_overrides(){
               - key: kubernetes.io/hostname
                 operator: NotIn
                 values:
-                - "specialhost"
-      hostNetwork: true' &&
+                - "specialhost"' &&
   echo '[SUCCESS] overrides test 2 passed successfully' >> "${TEST_RESULTS}" ||
   (echo '[FAILURE] overrides test 2 failed' && exit 1)
 
@@ -634,8 +633,7 @@ test_overrides(){
               - key: kubernetes.io/hostname
                 operator: NotIn
                 values:
-                - "specialhost"
-      hostNetwork: true' &&
+                - "specialhost"' &&
   echo '[SUCCESS] overrides test 3 passed successfully' >> "${TEST_RESULTS}" ||
   (echo '[FAILURE] overrides test 3 failed' && exit 1)
 
@@ -670,8 +668,7 @@ test_overrides(){
               - key: kubernetes.io/hostname
                 operator: NotIn
                 values:
-                - "specialhost"
-      hostNetwork: true' &&
+                - "specialhost"' &&
   echo '[SUCCESS] overrides test 4 passed successfully' >> "${TEST_RESULTS}" ||
   (echo '[FAILURE] overrides test 4 failed' && exit 1)
 
@@ -686,8 +683,7 @@ test_overrides(){
                 operator: In
                 values:
                 - "soup"
-                - "chips"
-      hostNetwork: true' &&
+                - "chips"' &&
   echo '[SUCCESS] overrides test 5 passed successfully' >> "${TEST_RESULTS}" ||
   (echo '[FAILURE] overrides test 5 failed' && exit 1)
 
@@ -722,8 +718,7 @@ test_overrides(){
               - key: test_label
                 operator: NotIn
                 values:
-                - "test_value"
-      hostNetwork: true' &&
+                - "test_value"' &&
   echo '[SUCCESS] overrides test 6 passed successfully' >> "${TEST_RESULTS}" ||
   (echo '[FAILURE] overrides test 6 failed' && exit 1)
 
@@ -735,7 +730,7 @@ test_overrides(){
     $SYSCTL_KEY1: 1
     $SYSCTL_KEY2: $key2_non_override_val
   overrides:
-    divingbell-sysctl:
+    divingbell_sysctl:
       hosts:
       - name: $(hostname -f)
         conf:
