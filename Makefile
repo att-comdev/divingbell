@@ -15,7 +15,7 @@
 HELM := helm
 TASK := build
 
-EXCLUDES := helm-toolkit doc tests tools logs
+EXCLUDES := helm-toolkit docs tests tools logs
 CHARTS := helm-toolkit $(filter-out $(EXCLUDES), $(patsubst %/.,%,$(wildcard */.)))
 
 all: $(CHARTS)
