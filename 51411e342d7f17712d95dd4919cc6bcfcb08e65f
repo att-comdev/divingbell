@@ -1,0 +1,96 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "390dcbe8_01863f66",
+        "filename": "divingbell/templates/bin/_uamlite.sh.tpl",
+        "patchSetId": 2
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 1011940
+      },
+      "writtenOn": "2018-03-16T20:04:43Z",
+      "side": 1,
+      "message": "2018",
+      "range": {
+        "startLine": 4,
+        "startChar": 15,
+        "endLine": 4,
+        "endChar": 16
+      },
+      "revId": "51411e342d7f17712d95dd4919cc6bcfcb08e65f",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "faad7306_faa30c65",
+        "filename": "divingbell/templates/bin/_uamlite.sh.tpl",
+        "patchSetId": 2
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 1011940
+      },
+      "writtenOn": "2018-03-16T20:04:43Z",
+      "side": 1,
+      "message": "nit: was not requested _for_ sudo access   ?",
+      "range": {
+        "startLine": 56,
+        "startChar": 34,
+        "endLine": 56,
+        "endChar": 63
+      },
+      "revId": "51411e342d7f17712d95dd4919cc6bcfcb08e65f",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "79fae549_3ec7b7ca",
+        "filename": "divingbell/templates/configmap-uamlite.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1011940
+      },
+      "writtenOn": "2018-03-16T20:04:43Z",
+      "side": 1,
+      "message": "Was this copied from OSH? looks like it\u0027s pretty much standard stuff below and all new/specific.",
+      "range": {
+        "startLine": 2,
+        "startChar": 0,
+        "endLine": 2,
+        "endChar": 42
+      },
+      "revId": "51411e342d7f17712d95dd4919cc6bcfcb08e65f",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "44c9bc0a_06b15bb9",
+        "filename": "divingbell/templates/daemonset-uamlite.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1011940
+      },
+      "writtenOn": "2018-03-16T20:04:43Z",
+      "side": 1,
+      "message": "2018",
+      "range": {
+        "startLine": 2,
+        "startChar": 12,
+        "endLine": 2,
+        "endChar": 16
+      },
+      "revId": "51411e342d7f17712d95dd4919cc6bcfcb08e65f",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
+    }
+  ]
+}
