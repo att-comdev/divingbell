@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "6878a791_95025082",
+        "filename": "Makefile",
+        "patchSetId": 3
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 1011593
+      },
+      "writtenOn": "2018-03-16T22:52:35Z",
+      "side": 1,
+      "message": "Can you have a target to match other att-comdev entrypoints  \n\n.PHONY: charts\ncharts: clean\n\t$(HELM) dep up charts/$(CHART)\n        $(HELM) package charts/$(CHART)",
+      "revId": "73f6e61efd770283761f51d8d2012599b531b008",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
+    }
+  ]
+}
