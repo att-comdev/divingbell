@@ -2,6 +2,29 @@
   "comments": [
     {
       "key": {
+        "uuid": "960cc239_eb9348cd",
+        "filename": "divingbell/templates/daemonset-ethtool.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 1012094
+      },
+      "writtenOn": "2018-03-23T16:59:38Z",
+      "side": 1,
+      "message": "You can reference $daemonset here for each of the four daemonsets",
+      "range": {
+        "startLine": 28,
+        "startChar": 18,
+        "endLine": 28,
+        "endChar": 25
+      },
+      "revId": "d3e59bbc01bc3d7a4e1db89d593927ff3e17f8c1",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "295671a5_343d6bde",
         "filename": "tools/helm_tk.sh",
         "patchSetId": 1
