@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "6cebdde3_203818ea",
+        "filename": "divingbell/templates/bin/_uamlite.sh.tpl",
+        "patchSetId": 4
+      },
+      "lineNbr": 126,
+      "author": {
+        "id": 1012098
+      },
+      "writtenOn": "2018-04-04T20:24:05Z",
+      "side": 1,
+      "message": "should we reset this after?  i guess since it doesn\u0027t work nothing later on depends on that",
+      "range": {
+        "startLine": 126,
+        "startChar": 0,
+        "endLine": 126,
+        "endChar": 11
+      },
+      "revId": "027bcb62b9602d970c19a74bccdf1f3a837f2bc7",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "21984401_9f25bffa",
+        "filename": "divingbell/templates/bin/_uamlite.sh.tpl",
+        "patchSetId": 4
+      },
+      "lineNbr": 143,
+      "author": {
+        "id": 1012098
+      },
+      "writtenOn": "2018-04-04T20:24:05Z",
+      "side": 1,
+      "message": "rm -v $(cat ...) ?",
+      "range": {
+        "startLine": 141,
+        "startChar": 2,
+        "endLine": 143,
+        "endChar": 59
+      },
+      "revId": "027bcb62b9602d970c19a74bccdf1f3a837f2bc7",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
+    }
+  ]
+}
