@@ -127,6 +127,19 @@ access. Ex::
           - ssh-rsa AAAAB3N... key1-comment
           - ssh-rsa AAAAVY6... key2-comment
 
+An update to the chart with revmoed users will result in those user's accounts
+being expired, preventing those users any access through those accounts. This
+does not delete their home directory or any other files, and provides UID
+consistency in the event the same account gets re-added later, and they regain
+access to their files again.
+
+However, if it is desired to purge expired and removed accounts and their home
+directories, this may be done using the ``purge_expired_users`` option::
+
+    conf:
+      uamlite:
+        purge_expired_users: true
+
 Node specific configurations
 ----------------------------
 
