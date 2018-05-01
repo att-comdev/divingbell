@@ -17,15 +17,12 @@
 Divingbell
 ==========
 
-What is it?
------------
-
 Divingbell is a lightweight solution for:
 1. Bare metal configuration management for a few very targeted use cases
 2. Bare metal package manager orchestration
 
 What problems does it solve?
-----------------------------
+============================
 
 The needs identified for Divingbell were:
 1. To plug gaps in day 1 tools (e.g., Drydock) for node configuration
@@ -33,7 +30,7 @@ The needs identified for Divingbell were:
 3. [Future] To provide a day 2 solution for system level host patching
 
 Design and Implementation
--------------------------
+=========================
 
 Divingbell daemonsets run as privileged containers which mount the host
 filesystem and chroot into that filesystem to enforce configuration and package
@@ -59,22 +56,18 @@ previously defined mount from the yaml manifest, with no record of the original
 mount in the updated manifest).
 
 Lifecycle management
---------------------
+====================
 
 This chart's daemonsets will be spawned by Armada. They run in an event-driven
 fashion: the idempotent automation for each daemonset will only re-run when
 Armada spawns/respawns the container, or if information relevant to the host
 changes in the configmap.
 
-For upgrades, a decision was taken not to use any of the built-in Kubernetes
-update strategies such as RollingUpdate. Instead, we are putting this on
-Armada to handle the orchestration of how to do upgrades (e.g., rack by rack).
-
 Daemonset configs
------------------
+=================
 
 sysctl
-^^^^^^
+------
 
 Used to manage host level sysctl tunables. Ex::
 
@@ -84,7 +77,7 @@ Used to manage host level sysctl tunables. Ex::
         net/ipv6/conf/all/forwarding: 1
 
 mounts
-^^^^^^
+------
 
 used to manage host level mounts (outside of those in /etc/fstab). Ex::
 
@@ -97,7 +90,7 @@ used to manage host level mounts (outside of those in /etc/fstab). Ex::
           options: 'defaults,noatime,nosuid,nodev,noexec,mode=1777,size=1024M'
 
 ethtool
-^^^^^^^
+-------
 
 Used to manage host level NIC tunables. Ex::
 
@@ -108,12 +101,12 @@ Used to manage host level NIC tunables. Ex::
           tx-checksum-ip-generic: on
 
 packages
-^^^^^^^^
+--------
 
 Not implemented
 
 uamlite
-^^^^^^^
+-------
 
 Used to manage host level local user accounts, their SSH keys, and their sudo
 access. Ex::
@@ -123,22 +116,73 @@ access. Ex::
         purge_expired_users: false
         users:
         - user_name: testuser
-          user_sudo: True
+          user_crypt_passwd: $6$...
+          user_sudo: true
           user_sshkeys:
           - ssh-rsa AAAAB3N... key1-comment
           - ssh-rsa AAAAVY6... key2-comment
 
-An update to the chart with revmoed users will result in those user's accounts
-being expired, preventing those users any access through those accounts. This
-does not delete their home directory or any other files, and provides UID
-consistency in the event the same account gets re-added later, and they regain
-access to their files again.
+Setting user passwords
+^^^^^^^^^^^^^^^^^^^^^^
 
-However, if it is desired to purge expired and removed accounts and their home
-directories, this may be done by the ``purge_expired_users`` option to ``true``.
+Including ``user_crypt_passwd`` to set a user password is optional.
+
+If setting a password for the user, the chart expects the password to be
+encrypted with SHA-512 and formatted in the way that ``crypt`` library expects.
+Run the following command to generate the needed encrypted password from the
+plaintext password::
+
+    python3 -c "from getpass import getpass; from crypt import *; p=getpass(); print('\n'+crypt(p, METHOD_SHA512)) if p==getpass('Please repeat: ') else print('\nPassword mismatch.')"
+
+Use the output of the above command as the ``user_crypt_passwd`` for the user.
+(Credit to `unix.stackexchange.com <https://unix.stackexchange.com/questions/81240/manually-generate-password-for-etc-shadow>`_.)
+If the password is not formatted how crypt expects, the chart will throw an
+error and fail to render.
+
+At least one user must be defined with a password in order for the built-in
+``ubuntu`` account to be disabled. This is because in a situation where network
+access is unavailable, console username/password access will be the only login
+option.
+
+Setting user sudo
+^^^^^^^^^^^^^^^^^
+
+Including ``user_sudo`` to set user sudo access is optional. The default value
+is ``false``.
+
+At least one user must be defined with sudo access in order for the built-in
+``ubuntu`` account to be disabled.
+
+SSH keys
+^^^^^^^^
+
+Including ``user_sshkeys`` for defining one or more user SSH keys is optional.
+
+The chart will throw an error and fail to render if the SSH key is not one of
+the following formats:
+
+- dsa (ssh-dss ...)
+- ecdsa (ecdsa-...)
+- ed25519 (ssh-ed25519 ...)
+- rsa (ssh-rsa ...)
+
+At least one user must be defined with an SSH key in order for the built-in
+``ubuntu`` account to be disabled.
+
+Purging expired users
+^^^^^^^^^^^^^^^^^^^^^
+
+Including the ``purge_expired_users`` key-value pair is optional. The default
+value is ``false``.
+
+This option must be set to ``true`` if it is desired to purge expired accounts
+and remove their home directories. Otherwise, removed accounts are expired (so
+users cannot login) but their home directories remain intact, in order to
+maintain UID consistency (in the event the same accounts gets re-added later,
+they regain access to their home directory files without UID mismatching).
 
 Node specific configurations
-----------------------------
+============================
 
 Although we expect these daemonsets to run indiscriminately on all nodes in the
 infrastructure, we also expect that different nodes will need to be given a
@@ -203,7 +247,7 @@ take precedence and be applied to nodes that contained both of the defined
 labels.
 
 Recorded Demo
--------------
+=============
 
 A recorded demo of using Divingbell can be found `here <https://asciinema.org/a/beJQZpRPdOctowW0Lxkxrhz17>`_.
 
