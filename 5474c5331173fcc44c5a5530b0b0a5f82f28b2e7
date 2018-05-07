@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "95aa8cb6_8f33dc15",
+        "filename": "docs/source/index.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 1011940
+      },
+      "writtenOn": "2018-05-07T18:18:25Z",
+      "side": 1,
+      "message": "Not sure why this is better, all moved up a layer in the documentation hierarchy but I suppose I don\u0027t care as long as it\u0027s what you want to do:\n\n Divingbell\n What problems does it solve?\n Design and Implementation\n\nvs:\n\n Divingbell\n   - What Problems does it solve?\n   - Design and Implementation\n\nIf you just ran out of layers, there\u0027s always each of these characters that will be considered another layer below:\n\n \u003d - ` : \u0027 \" ~ ^ _ * + # \u003c \u003e",
+      "range": {
+        "startLine": 25,
+        "startChar": 0,
+        "endLine": 25,
+        "endChar": 28
+      },
+      "revId": "5474c5331173fcc44c5a5530b0b0a5f82f28b2e7",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
+    }
+  ]
+}
